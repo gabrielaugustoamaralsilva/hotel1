@@ -24,6 +24,7 @@ public class rodar {
           if (!checkout.after(checkin)){
               System.out.println("Error you cant use a date before the dat you enter here");
           }else  System.out.println(re);
+        System.out.println("beautiful");
 
     }
 }
