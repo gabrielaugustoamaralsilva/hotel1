@@ -19,12 +19,22 @@ public class rodar {
            System.out.println("Checkout date (dd/MM/yyyy)");
            Date checkout = sdf.parse(sc.next());
            Reservation re = new Reservation(roomnumber, checkin, checkout);
-
-
           if (!checkout.after(checkin)){
               System.out.println("Error you cant use a date before the dat you enter here");
           }else  System.out.println(re);
-        System.out.println("beautiful");
+
+        System.out.println();
+        System.out.println("enter data to update reservation");
+         checkin = sdf.parse(sc.next());
+        System.out.println("Checkout date (dd/MM/yyyy)");
+         checkout = sdf.parse(sc.next());
+        re.updateDates(checkin,checkout);
+        Date now = new Date();
+        if (checkin.before(now) || checkout.before(now)){
+            System.out.println("Error you cant use a date before now");
+        } else if (!checkout.after(checkin)) {
+            System.out.println("Error you cant use a date before the dat you enter here");
+        } else  System.out.println(re);
 
     }
 }
